@@ -26,6 +26,7 @@ def dfs(start, end, m):
                 if path[len(path) - 1] == c[i][0]:
                     path.append(c[i][1])
             path.pop();
+            path.reverse();
             return path
             
         temp = []
