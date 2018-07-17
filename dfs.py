@@ -7,7 +7,7 @@ m = [[0, 0, 0, 1, 1, 0, 0, 1],
      [0, 0, 0, 1, 1, 1, 1, 1],
      [0, 0, 0, 0, 0, 0, 0, 0]]
 
-start = (0,0)
+start = (2,3)
 end = (1,6)
 path = []
 
@@ -25,7 +25,7 @@ def dfs(start, end, m):
             for i in range(len(c) - 1):
                 if path[len(path) - 1] == c[i][0]:
                     path.append(c[i][1])
-
+            path.pop();
             return path
             
         temp = []
