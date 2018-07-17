@@ -8,7 +8,7 @@ m = [[0, 0, 0, 1, 1, 0, 0, 1],
      [0, 0, 0, 0, 0, 0, 0, 0]]
 
 start = (0,0)
-end = (1,6)
+end = (5,6)
 path = []
 
 def dfs(start, end, m):
@@ -59,5 +59,4 @@ def dfs(start, end, m):
 
 
 print("The path calculated by the dfs function is: ", dfs(start, end, m))
-
 
