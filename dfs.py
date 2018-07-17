@@ -52,4 +52,4 @@ def dfs(start, end, m):
     
         print("Closed: ", c, "\n")
 
-print("The path calculated by the function from start to end is: ", dfs(start, end, m))
+print("The path calculated by the function from start to end on a map m is: ", dfs(start, end, m))
