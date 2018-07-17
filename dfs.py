@@ -7,8 +7,8 @@ m = [[0, 0, 0, 1, 1, 0, 0, 1],
      [0, 0, 0, 1, 1, 1, 1, 1],
      [0, 0, 0, 0, 0, 0, 0, 0]]
 
-start = (2,3)
-end = (1,6)
+start = (5,6)
+end = (2,3)
 path = []
 
 def dfs(start, end, m):
@@ -29,7 +29,7 @@ def dfs(start, end, m):
             path.reverse();
             return path
             
-        temp = []
+        temp = []   
         if X[0][0] > 0:
             if m[X[0][0] - 1][X[0][1]] == 0:
                 temp.insert(0, ((X[0][0] - 1, X[0][1]), X[0]))
@@ -52,4 +52,3 @@ def dfs(start, end, m):
     
         print("Closed: ", c, "\n")
 
-print("The path calculated by the dfs function is: ", dfs(start, end, m))
