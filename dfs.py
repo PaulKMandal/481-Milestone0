@@ -1,5 +1,3 @@
-from collections import OrderedDict
-
 m = [[0, 0, 0, 1, 1, 0, 0, 1],
      [0, 0, 1, 0, 1, 0, 0, 0],
      [0, 0, 1, 0, 1, 1, 0, 0],
@@ -7,9 +5,7 @@ m = [[0, 0, 0, 1, 1, 0, 0, 1],
      [0, 0, 0, 0, 1, 0, 0, 0],
      [0, 1, 0, 0, 0, 0, 0, 0],
      [0, 0, 0, 1, 1, 1, 1, 1],
-     [0, 0, 0, 0, 0, 0, 0, 0],
-     [0, 0, 0, 0, 0, 0, 0, 0],
-     [0, 1, 0, 0, 0, 0, 0, 0]]
+     [0, 0, 0, 0, 0, 0, 0, 0]]
 
 start = (0,0)
 end = (1,6)
@@ -21,7 +17,7 @@ def dfs(start, end, m):
     
     while o != []:
         X = o.pop(0)
-        print(X)
+        #print(X)
 
         if X[1] == None:
             x = 1;
@@ -30,7 +26,13 @@ def dfs(start, end, m):
 
         if X[0] == end:
             path.append(end);
-            return list(OrderedDict.fromkeys(path))
+            i = 1
+            while i < len(path):    
+                if path[i] == path[i-1]:
+                    path.pop(i)
+                    i -= 1  
+                i += 1
+            return path
             
         temp = []
         if X[0][0] > 0:
@@ -51,10 +53,11 @@ def dfs(start, end, m):
             if (not child[0] in [x[0] for x in c]) and (not child[0] in [x[0] for x in o]):
                 o.insert(0, child)
 
-        #print("Open: ", o)
+        print("Open: ", o)
     
-        #print("Closed: ", c, "\n")
+        print("Closed: ", c, "\n")
 
 
 print("The path calculated by the dfs function is: ", dfs(start, end, m))
+
 
